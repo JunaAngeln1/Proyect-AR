@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased selection:bg-blue selection:text-text;
+  }
+  :focus-visible {
+    outline: 2px solid #3987FF;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .high-contrast {
+    filter: contrast(1.4);
+  }
+  .reduce-motion * {
+    transition: none !important;
+    animation: none !important;
+  }
+  .large-text {
+    font-size: 1.125rem;
+  }
+  .large-text button,
+  .large-text input,
+  .large-text select,
+  .large-text textarea {
+    font-size: 1.125rem !important;
+    padding: 0.75rem 1rem !important;
+    min-height: 44px;
+  }
+  .large-buttons button,
+  .large-buttons [role="button"] {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
